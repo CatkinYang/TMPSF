@@ -1,6 +1,7 @@
 #pragma once
 
 #include "task.h"
+#include <memory>
 #include <unordered_map>
 #include <unordered_set>
 
@@ -22,4 +23,7 @@ class TaskManager {
     std::unordered_map<int, TaskRef> m_tasks;    // 存储id和Task之间的映射关系
     std::unordered_map<int, TaskRef> m_indegree; // 存储入度为0的任务
 };
+
+using TaskManagerRef = std::shared_ptr<TaskManager>;
+
 } // namespace TMPSF

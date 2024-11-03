@@ -30,6 +30,9 @@ class FPGA {
     auto getBram() { return m_bram; }
     auto getBlock() { return m_block; }
 
+    // 获取以x,y为左上角顶点，w为宽度，h为高度的形状的资源情况
+    auto getResources(int x, int y, int h, int w) -> std::tuple<int, int, int>;
+
   private:
     string m_name = "default name"; // FPGA名称
     vector<vector<char>> m_graph;   // FPGA资源分布

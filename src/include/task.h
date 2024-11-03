@@ -1,6 +1,8 @@
 #pragma once
+#include "shape.h"
 
 #include <memory>
+#include <tuple>
 #include <vector>
 
 using std::shared_ptr;
@@ -31,11 +33,16 @@ class Task {
     auto getExec() { return m_exectime; }
     auto getParent() { return m_parent; }
     auto getChildren() { return m_children; }
-
+    auto getResources() -> std::tuple<int, int, int> {
+        return {m_clb, m_dsp, m_bram};
+    }
     auto getStatus() { return m_status; }
     // auto canConfig() -> bool;
     auto addToParent(int id) { m_parent.push_back(id); }
     auto addToChildren(int id) { m_children.push_back(id); }
+    auto addToShapeList(ShapeRef s) { m_shapelist.push_back(s); }
+    auto sameHeightOpt() -> void;
+    auto printShape() -> void;
 
   private:
     // 任务id
@@ -63,7 +70,7 @@ class Task {
     vector<int> m_children; // 存储该任务的孩子任务id
     vector<int> m_parent;   // 存储该任务的父任务id
 
-    // vector<ShapeRef> m_shapelist; // 任务的候选形状列表
+    vector<ShapeRef> m_shapelist; // 任务的候选形状列表
 };
 
 } // namespace TMPSF
