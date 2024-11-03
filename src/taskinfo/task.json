@@ -1,0 +1,39 @@
+
+{
+  "tasks": [
+    {
+      "id": 1,
+      "clb": 2000,
+      "dsp": 80,
+      "bram": 80,
+      "exectime": 20,
+      "children": [
+        2,
+        3
+      ],
+      "parents": []
+    },
+    {
+      "id": 2,
+      "clb": 1000,
+      "dsp": 40,
+      "bram": 40,
+      "exectime": 10,
+      "children": [],
+      "parents": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "clb": 800,
+      "dsp": 30,
+      "bram": 30,
+      "exectime": 12,
+      "children": [],
+      "parents": [
+        1
+      ]
+    }
+  ]
+}

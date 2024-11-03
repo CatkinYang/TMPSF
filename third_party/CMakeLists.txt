@@ -5,4 +5,5 @@ set(gtest_force_shared_crt
 set(FORT_ENABLE_TESTING
     OFF
     CACHE INTERNAL "")
+
 add_subdirectory(googletest)

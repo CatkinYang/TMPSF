@@ -103,6 +103,9 @@ function(disable_target_warnings NAME)
   target_compile_options(${NAME} PRIVATE "-w")
 endfunction()
 
+set(CMAKE_MODULE_PATH "${TMPSF_BUILD_SUPPORT_DIR}/cmake;${CMAKE_MODULE_PATH}")
+find_package(jsoncpp)
+
 add_subdirectory(third_party)
 add_subdirectory(src)
 add_subdirectory(test)
