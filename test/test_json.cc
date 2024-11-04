@@ -4,7 +4,7 @@
 namespace TMPSF {
 TEST(JSON, BASIC_TEST1) {
     auto tm = new TaskManager();
-    tm->init_from_json("/Users/catkin/Study/TMPSF/src/taskinfo/task.json");
+    tm->init_from_json("/Users/catkin/Study/TMPSF/src/info/taskinfo/task.json");
     EXPECT_EQ(tm->task_num, 3);
     EXPECT_EQ(tm->getTask().at(1)->getBram(), 80);
 }

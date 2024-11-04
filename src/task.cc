@@ -47,6 +47,7 @@ auto Task::printShape() -> void {
         std::cout << id << " : ";
         std::cout << "Width: " << s->getHW().second
                   << " Height: " << s->getHW().first << std::endl;
+        id++;
     }
 }
 // auto Task::canConfig() -> bool {

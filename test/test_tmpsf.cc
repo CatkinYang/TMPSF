@@ -9,7 +9,7 @@ namespace TMPSF {
 
 TEST(TMPSF, BASIC_TEST1) {
     auto tm = std::make_shared<TaskManager>();
-    tm->init_from_json("/Users/catkin/Study/TMPSF/src/taskinfo/task.json");
+    tm->init_from_json("/Users/catkin/Study/TMPSF/src/info/taskinfo/task.json");
     auto fpga = std::make_shared<FPGA>("vc707");
     fpga->initFromFile("vc707");
 

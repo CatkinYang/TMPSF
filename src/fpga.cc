@@ -8,7 +8,7 @@ namespace TMPSF {
 
 auto FPGA::initFromFile(const string &filename) -> void {
     std::string path =
-        "/Users/catkin/Study/TMPSF/src/deviceinfo/" + filename + ".txt";
+        "/Users/catkin/Study/TMPSF/src/info/deviceinfo/" + filename + ".txt";
     std::ifstream inputFile(path);
     if (inputFile.is_open()) {
         std::string line;
