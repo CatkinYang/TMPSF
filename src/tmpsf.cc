@@ -3,7 +3,10 @@
 #include <iostream>
 #include <memory>
 #include <ostream>
+#include <shared_mutex>
+#include <string>
 #include <thread>
+#include <tuple>
 #include <vector>
 
 namespace TMPSF {
@@ -19,6 +22,7 @@ auto TMPSF::judgeShapeValid(std::tuple<int, int, int> &has,
 auto TMPSF::check(FPGARef fp, TaskRef task, int shape_x, int shape_y) -> bool {
     int fpga_width = fp->getGraph()[0].size();
     int fpga_height = fp->getGraph().size();
+
     auto need = task->getResources();
     bool res = true;
     for (int i = 0; i < fpga_width; i++) {
@@ -27,7 +31,14 @@ auto TMPSF::check(FPGARef fp, TaskRef task, int shape_x, int shape_y) -> bool {
         for (int j = 0; j < fpga_height; j++) {
             if (j + shape_y > fpga_height)
                 break;
+
+            // std::string key = std::to_string(i) + std::to_string(j) +
+            //                   std::to_string(shape_x) +
+            //                   std::to_string(shape_y);
+
             auto has = fp->getResources(i, j, shape_x, shape_y);
+
+            // auto has = fp->getResources(i, j, shape_x, shape_y);
             if (!judgeShapeValid(has, need)) {
                 res = false;
                 break;

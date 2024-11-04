@@ -4,6 +4,7 @@
 #include "task_manager.h"
 #include <iostream>
 #include <map>
+#include <shared_mutex>
 #include <tuple>
 
 namespace TMPSF {
@@ -33,7 +34,7 @@ class TMPSF {
   private:
     TaskManagerRef m_tm;
     FPGARef m_fp;
-    std::vector<std::vector<std::tuple<int, int, int>>> prefixSum;
+    // std::vector<std::vector<std::tuple<int, int, int>>> prefixSum;
 };
 
 } // namespace TMPSF
