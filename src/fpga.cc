@@ -1,4 +1,5 @@
 #include "fpga.h"
+#include "utils.h"
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -7,8 +8,8 @@
 namespace TMPSF {
 
 auto FPGA::initFromFile(const string &filename) -> void {
-    std::string path =
-        "/Users/catkin/Study/TMPSF/src/info/deviceinfo/" + filename + ".txt";
+    std::string root_path = Utils::get_project_root();
+    std::string path = root_path + "/src/info/deviceinfo/" + filename + ".txt";
     std::ifstream inputFile(path);
     if (inputFile.is_open()) {
         std::string line;

@@ -1,0 +1,167 @@
+{
+	"tasks" : 
+	[
+		{
+			"bram" : 80,
+			"children" : 
+			[
+				2,
+				3
+			],
+			"clb" : 2000,
+			"dsp" : 80,
+			"exectime" : 20,
+			"id" : 1,
+			"parents" : 
+			[
+				2,
+				3
+			],
+			"shapes" : 
+			[
+				{
+					"height" : 2,
+					"width" : 1
+				},
+				{
+					"height" : 3,
+					"width" : 2
+				}
+			]
+		},
+		{
+			"bram" : 40,
+			"children" : 
+			[
+				1
+			],
+			"clb" : 1000,
+			"dsp" : 40,
+			"exectime" : 10,
+			"id" : 2,
+			"parents" : 
+			[
+				1
+			],
+			"shapes" : 
+			[
+				{
+					"height" : 2,
+					"width" : 1
+				},
+				{
+					"height" : 3,
+					"width" : 2
+				}
+			]
+		},
+		{
+			"bram" : 30,
+			"children" : 
+			[
+				1
+			],
+			"clb" : 800,
+			"dsp" : 30,
+			"exectime" : 12,
+			"id" : 3,
+			"parents" : 
+			[
+				1
+			],
+			"shapes" : 
+			[
+				{
+					"height" : 2,
+					"width" : 1
+				},
+				{
+					"height" : 3,
+					"width" : 2
+				}
+			]
+		},
+		{
+			"bram" : 30,
+			"children" : 
+			[
+				5,
+				6,
+				3
+			],
+			"clb" : 800,
+			"dsp" : 30,
+			"exectime" : 10,
+			"id" : 4,
+			"parents" : 
+			[
+				5,
+				6,
+				3
+			],
+			"shapes" : 
+			[
+				{
+					"height" : 2,
+					"width" : 1
+				},
+				{
+					"height" : 3,
+					"width" : 2
+				}
+			]
+		},
+		{
+			"bram" : 30,
+			"children" : 
+			[
+				4
+			],
+			"clb" : 800,
+			"dsp" : 30,
+			"exectime" : 12,
+			"id" : 5,
+			"parents" : 
+			[
+				4
+			],
+			"shapes" : 
+			[
+				{
+					"height" : 2,
+					"width" : 1
+				},
+				{
+					"height" : 3,
+					"width" : 2
+				}
+			]
+		},
+		{
+			"bram" : 30,
+			"children" : 
+			[
+				4
+			],
+			"clb" : 1800,
+			"dsp" : 30,
+			"exectime" : 12,
+			"id" : 6,
+			"parents" : 
+			[
+				4
+			],
+			"shapes" : 
+			[
+				{
+					"height" : 2,
+					"width" : 1
+				},
+				{
+					"height" : 3,
+					"width" : 2
+				}
+			]
+		}
+	]
+}

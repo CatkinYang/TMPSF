@@ -6,14 +6,14 @@ namespace TMPSF {
 
 TEST(JSON, BASIC_TEST1) {
     auto tm = new TaskManager();
-    tm->init_from_json("/Users/catkin/Study/TMPSF/src/info/taskinfo/task.json");
+    tm->init_from_json("task.json");
     EXPECT_EQ(tm->task_num, 6);
     EXPECT_EQ(tm->getTask().at(1)->getBram(), 80);
 }
 
 TEST(JSON, BASIC_TEST2) {
     auto tm = std::make_shared<TaskManager>();
-    tm->init_from_json("/Users/catkin/Study/TMPSF/src/info/taskinfo/task.json");
+    tm->init_from_json("task.json");
     auto fpga = std::make_shared<FPGA>("vc707");
     fpga->initFromFile("vc707");
     auto tmpsf = std::make_unique<TMPSF>(tm, fpga);

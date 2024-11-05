@@ -1,5 +1,6 @@
 #include "tmpsf.h"
 #include "shape.h"
+#include "utils.h"
 #include "json/include/json/json.h"
 #include <fstream>
 #include <iostream>
@@ -103,8 +104,8 @@ auto TMPSF::taskShapeGenerator() -> void {
 }
 
 auto TMPSF::tmpsfInitFromFullInfoJsonFile(const std::string &filename) -> void {
-    std::string path =
-        "/Users/catkin/Study/TMPSF/pre_process/" + filename + ".json";
+    std::string root_path = Utils::get_project_root();
+    std::string path = root_path + "/pre_process/" + filename + ".json";
     std::ifstream jsonFile(path);
     if (!jsonFile.is_open()) {
         std::cerr << "Failed to open JSON file" << std::endl;
@@ -179,8 +180,8 @@ auto TMPSF::taskShapeInfoToJsonFIle(const std::string &filename) -> void {
     }
 
     // 将Json对象写入文件
-    std::string path =
-        "/Users/catkin/Study/TMPSF/pre_process/" + filename + ".json";
+    std::string root_path = Utils::get_project_root();
+    std::string path = root_path + "/pre_process/" + filename + ".json";
     std::ofstream file(path, std::ofstream::out);
     if (!file.is_open()) {
         std::cerr << "Failed to open file: " << path << std::endl;
@@ -229,8 +230,8 @@ auto TMPSF::taskFullInfoToJsonFile(const std::string &filename) -> void {
     }
 
     // 将Json对象写入文件
-    std::string path =
-        "/Users/catkin/Study/TMPSF/pre_process/" + filename + ".json";
+    std::string root_path = Utils::get_project_root();
+    std::string path = root_path + "/pre_process/" + filename + ".json";
     std::ofstream file(path, std::ofstream::out);
     if (!file.is_open()) {
         std::cerr << "Failed to open file: " << path << std::endl;

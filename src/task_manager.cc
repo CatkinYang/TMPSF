@@ -1,4 +1,5 @@
 #include "task_manager.h"
+#include "utils.h"
 #include "json/include/json/json.h"
 #include <fstream>
 #include <iostream>
@@ -8,9 +9,11 @@
 namespace TMPSF {
 
 auto TaskManager::init_from_json(const std::string &filename) -> void {
-    std::ifstream jsonFile(filename);
+    std::string root_path = Utils::get_project_root();
+    std::string path = root_path + "/src/info/taskinfo/" + filename;
+    std::ifstream jsonFile(path);
     if (!jsonFile.is_open()) {
-        std::cerr << "Failed to open JSON file" << std::endl;
+        std::cerr << "TM Failed to open JSON file" << std::endl;
         return;
     }
 

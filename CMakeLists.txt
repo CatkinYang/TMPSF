@@ -105,7 +105,7 @@ function(disable_target_warnings NAME)
 endfunction()
 
 set(CMAKE_MODULE_PATH "${TMPSF_BUILD_SUPPORT_DIR}/cmake;${CMAKE_MODULE_PATH}")
-find_package(jsoncpp REQUIRED)
+find_package(jsoncpp)
 find_package(GUROBI)
 
 include_directories(${GUROBI_INCLUDE_DIRS})
