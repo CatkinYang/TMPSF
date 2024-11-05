@@ -2,6 +2,7 @@
 #include "task_manager.h"
 #include "tmpsf.h"
 #include "gtest/gtest.h"
+
 #include <iostream>
 #include <memory>
 
@@ -22,6 +23,7 @@ TEST(TMPSF, BASIC_TEST1) {
         std::cout << "Task " << id << std::endl;
         task->printShape();
     }
+    tmpsf->taskFullInfoToJsonFile("vc707_task_json");
 }
 
 } // namespace TMPSF

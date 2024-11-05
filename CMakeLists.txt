@@ -97,6 +97,7 @@ set(TMPSF_THIRD_PARTY_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/third_party)
 
 include_directories(${TMPSF_SRC_INCLUDE_DIR} ${TMPSF_TEST_INCLUDE_DIR}
                     ${TMPSF_THIRD_PARTY_INCLUDE_DIR})
+
 include_directories(BEFORE src) # This is needed for gtest.
 
 function(disable_target_warnings NAME)
@@ -104,7 +105,10 @@ function(disable_target_warnings NAME)
 endfunction()
 
 set(CMAKE_MODULE_PATH "${TMPSF_BUILD_SUPPORT_DIR}/cmake;${CMAKE_MODULE_PATH}")
-find_package(jsoncpp)
+find_package(jsoncpp REQUIRED)
+find_package(GUROBI)
+
+include_directories(${GUROBI_INCLUDE_DIRS})
 
 add_subdirectory(third_party)
 add_subdirectory(src)

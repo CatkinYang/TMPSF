@@ -1,6 +1,7 @@
 #pragma once
 #include "shape.h"
 
+#include <algorithm>
 #include <memory>
 #include <tuple>
 #include <vector>
@@ -37,10 +38,16 @@ class Task {
         return {m_clb, m_dsp, m_bram};
     }
     auto getStatus() { return m_status; }
+    auto getShapes() { return m_shapelist; }
     // auto canConfig() -> bool;
     auto addToParent(int id) { m_parent.push_back(id); }
     auto addToChildren(int id) { m_children.push_back(id); }
     auto addToShapeList(ShapeRef s) { m_shapelist.push_back(s); }
+    auto addToShapeList(int w, int h) {
+        auto s = std::make_shared<Shape>(w, h);
+        m_shapelist.push_back(s);
+    }
+    auto setShapeList(std::vector<ShapeRef> sl) { m_shapelist = std::move(sl); }
     auto sameHeightOpt() -> void;
     auto printShape() -> void;
 

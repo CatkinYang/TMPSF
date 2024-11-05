@@ -33,7 +33,8 @@ foreach(tmpsf_test_source ${TMPSF_TEST_SOURCES})
     PROPERTIES
     TIMEOUT 120)
 
-  target_link_libraries(${tmpsf_test_name} tmpsf gtest jsoncpp_lib)
+  target_link_libraries(${tmpsf_test_name} tmpsf gtest jsoncpp_lib
+                        ${GUROBI_LIBRARIES})
 
   # Set test target properties and dependencies.
   set_target_properties(
