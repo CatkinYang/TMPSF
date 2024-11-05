@@ -1,0 +1,94 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "clb": 2741,
+      "dsp": 45,
+      "bram": 59,
+      "exectime": 18,
+      "children": [2, 3],
+      "parents": []
+    },
+    {
+      "id": 2,
+      "clb": 2619,
+      "dsp": 32,
+      "bram": 67,
+      "exectime": 12,
+      "children": [4, 5],
+      "parents": [1]
+    },
+    {
+      "id": 3,
+      "clb": 2289,
+      "dsp": 55,
+      "bram": 43,
+      "exectime": 16,
+      "children": [6],
+      "parents": [1]
+    },
+    {
+      "id": 4,
+      "clb": 2087,
+      "dsp": 22,
+      "bram": 37,
+      "exectime": 10,
+      "children": [],
+      "parents": [2]
+    },
+    {
+      "id": 5,
+      "clb": 2193,
+      "dsp": 11,
+      "bram": 48,
+      "exectime": 12,
+      "children": [7],
+      "parents": [2]
+    },
+    {
+      "id": 6,
+      "clb": 2923,
+      "dsp": 49,
+      "bram": 62,
+      "exectime": 14,
+      "children": [8],
+      "parents": [3]
+    },
+    {
+      "id": 7,
+      "clb": 2624,
+      "dsp": 26,
+      "bram": 39,
+      "exectime": 11,
+      "children": [9],
+      "parents": [5]
+    },
+    {
+      "id": 8,
+      "clb": 2717,
+      "dsp": 34,
+      "bram": 31,
+      "exectime": 10,
+      "children": [],
+      "parents": [6]
+    },
+    {
+      "id": 9,
+      "clb": 2433,
+      "dsp": 38,
+      "bram": 42,
+      "exectime": 15,
+      "children": [],
+      "parents": [7]
+    },
+    {
+      "id": 10,
+      "clb": 2974,
+      "dsp": 68,
+      "bram": 23,
+      "exectime": 20,
+      "children": [],
+      "parents": [7]
+    }
+  ]
+}
